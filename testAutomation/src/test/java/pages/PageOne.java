@@ -48,12 +48,14 @@ public class PageOne extends TestBase {
 	WebElement lblLocationSecond;
 	
 	//To initialize page object
+	/*Constructor to initiate webdriver */
 	public PageOne()
 	{
 		TestBase.initialization();
 		PageFactory.initElements(driver, this);
 	}
 	
+	/* Method that check for title*/
 	public String VerifyHomePage() 
 	{
 		
@@ -67,14 +69,14 @@ public class PageOne extends TestBase {
 		//System.out.println(jim);
 		
 	}
-	
+	/*Perform click on Findmeeting */
 	public void GotoFindMeeting()
 	{
-//		
+
 		this.btnFindMeeting.sendKeys(Keys.ENTER);
 		
 	}
-	
+	/* Verify title*/
 	public String verifyPage2()
 	{
 		try {
@@ -86,7 +88,7 @@ public class PageOne extends TestBase {
 		return driver.getTitle();
 		
 	}
-	
+	/* Enter zipcode and perform search operation */
 	public void EnterZipCode()
 	{
 		try {
@@ -98,7 +100,7 @@ public class PageOne extends TestBase {
 		this.txtZipCode.sendKeys("10011");
 		this.btnSearch.sendKeys(Keys.ENTER);
 	}
-	
+	/*STORE text of first result from the search of zipcode */
 	public String PrintLocation()
 	{
 		try {
@@ -114,7 +116,7 @@ public class PageOne extends TestBase {
 		return a1+a2;
 		
 	}
-	
+	/* store the first result to verify */
 	public String StoreLocation()
 	{
 		try {
@@ -128,7 +130,7 @@ public class PageOne extends TestBase {
 		return b1;
 		
 	}
-	
+	/*perform click operation to move forward */
 	public void GotoFirstResult()
 	{
 		//String b1 = this.lblLocation.getText();
@@ -144,7 +146,7 @@ public class PageOne extends TestBase {
 				e.printStackTrace();
 			}
 	}
-	
+	/* store the resulting page values to validate */
 	public String StoreLocationSecond()
 	{
 		try {
@@ -158,7 +160,7 @@ public class PageOne extends TestBase {
 		return d1;
 		
 	}
-	
+	/* to display the hours of operation of current day*/
 	public String HoursOfOperation()
 	{
 		try {
@@ -171,6 +173,7 @@ public class PageOne extends TestBase {
 		return h1;
 	}
 
+	/* close session */
 	public void closeBrowser()
 	{
 		driver.close();
